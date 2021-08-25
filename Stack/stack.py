@@ -1,9 +1,7 @@
 class Stack:
-    
-    dataContainer = list()
-    
+            
     def __init__(self) -> None:
-        pass
+        self.dataContainer = list()
 
     def push(self, item):
         self.dataContainer.append(item)
@@ -18,7 +16,4 @@ class Stack:
         return len(self.dataContainer)
 
     def is_empty(self):
-        if len(self.dataContainer) == 0:
-            return True
-        else:
-            return False
+        return self.dataContainer == []
