@@ -17,3 +17,17 @@ class Stack:
 
     def is_empty(self):
         return self.dataContainer == []
+
+
+if __name__ == "__main__":
+    stk = Stack()
+
+    stk.push("Hello")
+    stk.push(66)
+    stk.push("Tom")
+
+    print(stk.dataContainer)
+
+    print(stk.pop())
+
+    print(stk.dataContainer)
