@@ -8,12 +8,19 @@ def checkParen(expression):
         if char == '(':
             stk.push('(')
         elif char == ')':
-            stk.pop()
+            if stk.size() > 0:
+                stk.pop()
+            else:
+                print("Expresssion is not balanced")
+                
+                return
 
     if stk.size() == 0:
         print("Expression is balanced")
     else:
         print("Expresssion is not balanced")
+    
+    return
 
 
 if __name__ == "__main__":
@@ -22,8 +29,9 @@ if __name__ == "__main__":
     exp_02 = '(()'          # Not Balanced
     exp_03 = '(()()()())'   # Balanced
     exp_04 = '(()()(()'     # Not Balanced
+    exp_05 = '())'          # Not Balanced, more closing than opening
 
-    list_of_expressions = [ exp_01, exp_02, exp_03, exp_04 ]
+    list_of_expressions = [ exp_01, exp_02, exp_03, exp_04, exp_05 ]
 
     for i in range(len(list_of_expressions)):
         checkParen(list_of_expressions[i])
